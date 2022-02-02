@@ -7,8 +7,9 @@ import { User } from "../models/user.model";
 })
 
 export class UsersService {
-    private users: User[] = [];
-    private error: string = "";
+    //can not access this outside of class. metod is created to be able to reach property
+    private _users: User[] = [];
+    private _error: string = "";
 
     //Dependency Injection
     constructor(private readonly http: HttpClient) {
@@ -17,9 +18,18 @@ export class UsersService {
     public fetchUsers(): void {
         this.http.get<User[]>("https://trivia-game-noroff-api.herokuapp.com/trainers")
             .subscribe((users: User[]) => {
-                this.users = users;
+                this._users = users;
             }, (error: HttpErrorResponse) => {
-                this.error = error.message;
+                this._error = error.message;
             });
     }
+// Getter for only getting the Users and not changing the users in the services
+    public getUsers(): User[]{
+        return this._users;
+    }
+
+    public getError():string{
+        return this._error;
+    }
+
 }
