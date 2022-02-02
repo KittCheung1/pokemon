@@ -10,6 +10,7 @@ export class UsersService {
     private users: User[] = [];
     private error: string = "";
 
+    //Dependency Injection
     constructor(private readonly http: HttpClient) {
     }
 
@@ -19,6 +20,6 @@ export class UsersService {
                 this.users = users;
             }, (error: HttpErrorResponse) => {
                 this.error = error.message;
-            })
+            });
     }
 }
