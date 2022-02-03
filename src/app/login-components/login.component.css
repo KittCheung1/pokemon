@@ -37,17 +37,17 @@ img {
 
 .inputField {
     height: 60px;
-    border-width: 5px;
+    border-width: 3px;
     border-radius: 10px;
-    border-color: rgba(0, 0, 0, 0.74);
+    border-color: rgb(0, 0, 0);
     border-style: solid;
     font-size: 23px;
     text-align: left;
     padding-left: 10px;
     position: relative;
-    background: transparent;
-    color: black;
+    background:rgb(116, 228, 191);
     outline: none;
+    color:black;
 }
 
 form {
@@ -62,6 +62,7 @@ body {
 
 
 .mainDiv {
+    
     z-index: -1;
     position: absolute;
     top: 0;
