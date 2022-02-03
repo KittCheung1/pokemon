@@ -8,6 +8,7 @@ import { UsersService } from "../services/Users.service";
     styleUrls: ["./login.component.css"],
 }) //Decorator
 export class LoginComponent implements OnInit {
+
     constructor(private readonly UserService: UsersService) {
 
     }
@@ -21,4 +22,5 @@ export class LoginComponent implements OnInit {
 
         return this.UserService.getUsers();
     }
+
 }
