@@ -21,7 +21,7 @@ export class TrainersPage{
     }
     get users():User[]{
 
-        return this.UserService.getUsers();
+        return this.UserService.users();
     }
 };
 

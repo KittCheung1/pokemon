@@ -24,7 +24,7 @@ export class UsersService {
             });
     }
 // Getter for only getting the Users object and not changing the users in the services
-    public getUsers(): User[]{
+    public users(): User[]{
         return this._users;
     }
 
