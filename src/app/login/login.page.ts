@@ -7,10 +7,10 @@ import { Router } from "@angular/router";
 
 @Component({
     selector: "app-login",
-    templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.css"],
+    templateUrl: "./login.page.html",
+    styleUrls: ["./login.page.css"],
 }) //Decorator
-export class LoginComponent implements OnInit {
+export class LoginPage implements OnInit {
     APIusername: any;
     username:string="";
 

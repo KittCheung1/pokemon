@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 ;
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login-components/login.component';
+import { LoginPage } from './login/login.page';
 import { TrainersPage } from './trainers/trainers.page';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({ //Decorator
   declarations: [
     AppComponent,
-    LoginComponent,
+    LoginPage,
     TrainersPage,
   ],
   imports: [
