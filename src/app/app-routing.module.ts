@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core"
 import { RouterModule, Routes } from "@angular/router"
-import { LoginComponent } from "./login-components/login.component"
+import { LoginPage } from "./login/login.page"
 import { PokedexPage } from "./pokedex/pokedex.page";
 import { TrainersPage } from "./trainers/trainers.page"
 
@@ -15,7 +15,7 @@ const routes: Routes = [
         // component: LoginComponent
 
     },
-    { path: "login", component: LoginComponent },
+    { path: "login", component: LoginPage },
     { path: "trainers", component: TrainersPage },
     { path: "pokedex", component: PokedexPage }
 ];
