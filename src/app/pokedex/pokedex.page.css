@@ -1,3 +1,13 @@
+.container{
+    background-color:rgb(115, 209, 209);
+    margin: 0;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: darkcyan;
+
+}
+
 .btn{
     height: 40px;
 }

@@ -8,4 +8,4 @@ import { UsersService } from "../services/Users.service";
     styleUrls:["./pokedex.page.css"]
 })
 
-export class Pokedex{}
+export class PokedexPage{}
