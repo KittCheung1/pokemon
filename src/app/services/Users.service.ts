@@ -23,8 +23,8 @@ export class UsersService {
                 this._error = error.message;
             });
     }
-// Getter for only getting the Users and not changing the users in the services
-    public getUsers(): User[]{
+// Getter for only getting the Users object and not changing the users in the services
+    public users(): User[]{
         return this._users;
     }
 
@@ -32,4 +32,4 @@ export class UsersService {
         return this._error;
     }
 
-}
+} 
