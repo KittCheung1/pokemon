@@ -16,7 +16,10 @@ export class TrainersPage{
 
     }
 
+    
     ngOnInit(): void {
+
+        console.log(UsersService.signedInUser)
         // this.UserService.fetchUsers();
     }
     // get users():User[]{

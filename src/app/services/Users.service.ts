@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
 export class UsersService {
     private _users: User[] = [];
     private _error: string = "";
-    public signedInUser: any;
+    public static signedInUser: User| null= null;
 
     constructor(private readonly http: HttpClient) { }
     // public getUsers() {

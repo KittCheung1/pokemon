@@ -17,7 +17,6 @@ const apiKey = "334H7SGhAEiIPqPfCg+pfA=="
 export class LoginPage implements OnInit {
 
     trainer: any;
-    // foundUser: any;
     APIusername: any;
     inputUsername: string = "";
     fetchedUsers: any;
@@ -31,11 +30,12 @@ export class LoginPage implements OnInit {
 
     }
     login() {
-        const foundUser = this.findUser(this.inputUsername)
-        if (foundUser)
+        let user = this.findUser(this.inputUsername)
+        if (!user )
+        user = this.createUser(this.inputUsername)
+        
+        UsersService.signedInUser = user
         this.router.navigate(["trainers"])
-        else
-            this.createUser(this.inputUsername)
         console.log(this.inputUsername)
     }
 
