@@ -17,11 +17,11 @@ export class TrainersPage{
     }
 
     ngOnInit(): void {
-        this.UserService.fetchUsers();
+        // this.UserService.fetchUsers();
     }
-    get users():User[]{
+    // get users():User[]{
 
-        return this.UserService.users();
-    }
+    //     return this.UserService.users();
+    // }
 };
 
