@@ -13,7 +13,7 @@ export class PokemonService {
 
   getPokemonsFromSessionStorage(numOne: number, numTwo: number) {
     let result: Pokemon[] = [];
-    for (let index = numOne; index < numTwo; index++) {
+    for (let index = numOne; index <= numTwo; index++) {
 
         let temp = sessionStorage.getItem(index.toString());
        
@@ -28,8 +28,19 @@ export class PokemonService {
   
     return result;
 }
+getPokemonByID(id: number) {
+  let result: Pokemon;
+  let temp = sessionStorage.getItem(id.toString());
+
+  if(temp === null){
+    return; 
+  }
+  else if(temp){
+    result = JSON.parse(temp);
+  }
+}
   getPokemonsFromApi() {
-    return this.http.get("https://pokeapi.co/api/v2/pokemon?limit=1100");
+    return this.http.get("https://pokeapi.co/api/v2/pokemon?limit=152");
   }
 
   getMorePokemonsFromApi(name: string) {

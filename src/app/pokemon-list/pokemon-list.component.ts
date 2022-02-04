@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck, ChangeDetectorRef, SimpleChanges, SimpleChange } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
+
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,17 +9,16 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class PokemonListComponent implements OnInit {
 
+
   pokemons: any[] = []
-  pokemonFromSession = this.pokemonService.getPokemonsFromSessionStorage(0,152);
+  pokemonFromSession = this.pokemonService.getPokemonsFromSessionStorage(0, 150);
 
   constructor(
-    private pokemonService: PokemonService
+    private pokemonService: PokemonService,
+  
   ) { }
 
- 
   ngOnInit(): void {
-  //console.log(this.pokemonFromSession[0].types[0);
-  //console.log(this.pokemonFromSession)
     if (sessionStorage.length < 1) {
       this.pokemonService.getPokemonsFromApi()
         .subscribe((response: any) => {
@@ -26,13 +26,14 @@ export class PokemonListComponent implements OnInit {
             this.pokemonService.getMorePokemonsFromApi(result.name)
               .subscribe((pokemon: any) => {
                 this.pokemons.push(pokemon);
-                console.log(this.pokemons);
-
-                  sessionStorage.setItem(pokemon.id, 
-                    JSON.stringify({ id: pokemon.id, name: pokemon.name, sprites: pokemon.sprites.front_default, types: pokemon.types }));
+                sessionStorage.setItem(pokemon.id,
+                  JSON.stringify({ id: pokemon.id , name: pokemon.name, sprites: pokemon.sprites.front_default, types: pokemon.types }));
               })
           });
+          location.reload(); 
         })
+     
     }
+    
   }
 }
