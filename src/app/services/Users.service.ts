@@ -10,11 +10,12 @@ import { Observable } from "rxjs";
 export class UsersService {
     private _users: User[] = [];
     private _error: string = "";
+    public signedInUser: any;
 
     constructor(private readonly http: HttpClient) { }
-    public getUsers() {
-        return this.http.get<User[]>("https://trivia-game-noroff-api.herokuapp.com/trainers")
-    }
+    // public getUsers() {
+    //     return this.http.get<User[]>("https://trivia-game-noroff-api.herokuapp.com/trainers")
+    // }
     // setUser(users: User[]) {
     //     this.user = users;
     // }
@@ -28,14 +29,14 @@ export class UsersService {
 
     public fetchUsers(): void {
         this.http.get<User[]>("https://trivia-game-noroff-api.herokuapp.com/trainers")
-            .subscribe((users: User[]) => {
+            .subscribe(users => {
                 this._users = users;
             }, (error: HttpErrorResponse) => {
                 this._error = error.message;
             });
     }
     // Getter for only getting the Users object and not changing the users in the services
-    public users(): User[] {
+    public getUsers(): User[] {
         return this._users;
     }
 

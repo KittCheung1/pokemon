@@ -4,7 +4,7 @@ import { User } from "../models/user.model";
 import { UsersService } from "../services/Users.service";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable, UnsubscriptionError } from "rxjs";
 
 const apiURL = 'https://trivia-game-noroff-api.herokuapp.com/trainers'
 const apiKey = "334H7SGhAEiIPqPfCg+pfA=="
@@ -15,37 +15,42 @@ const apiKey = "334H7SGhAEiIPqPfCg+pfA=="
     styleUrls: ["./login.page.css"],
 }) //Decorator
 export class LoginPage implements OnInit {
-    users = [];
+
+    trainer: any;
+    // foundUser: any;
     APIusername: any;
-    username: string = "";
-    fetchedData: any
+    inputUsername: string = "";
+    fetchedUsers: any;
+
     constructor(private router: Router, private http: HttpClient, private readonly UserService: UsersService, private fb: FormBuilder) {
     }
     ngOnInit() {
-        // this.UserService.getUsers()
-        //     .subscribe(data => {this.UserService.setUser(data);console.log(data)})
-
         this.UserService.fetchUsers();
-        // this.http.get<any>(apiURL).subscribe(data => {
-        //     this.APIusername = data[0].username
-        // })
-        // localStorage.setItem("SessionUser", this.user)
+        this.getUsers();
+
 
     }
     login() {
-        this.getUser()
-        this.createUser()
+        const foundUser = this.findUser(this.inputUsername)
+        if (foundUser)
+        this.router.navigate(["trainers"])
+        else
+            this.createUser(this.inputUsername)
+        console.log(this.inputUsername)
     }
 
-    getUser() {
-        this.UserService.getUsers()
-            .subscribe(users =>
-                this.fetchedData = users);
+    getUsers() {
+        this.http.get<User[]>(apiURL)
+            .subscribe(users => {
+                this.fetchedUsers = users
+                console.log(this.fetchedUsers)
+            })
     }
 
-    createUser() {
+
+    createUser(name: string) {
         this.http.post(apiURL, {
-            username: this.username,
+            username: name,
             pokemon: []
         }, {
             headers: {
@@ -54,13 +59,15 @@ export class LoginPage implements OnInit {
             }
         })
             .subscribe(response => {
-                console.log(response)
                 if (!response) {
                     throw new Error('Could not create new Trainer')
                 }
-                console.log(response)
                 return response
             })
+    }
+
+    findUser(username: string) {
+        return this.fetchedUsers.find((x: User) => x.username === username)
     }
     // A getter to expose variables to the template
     // returns an array of users object
