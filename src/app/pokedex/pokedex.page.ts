@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { User } from "../models/user.model";
 import { UsersService } from "../services/Users.service";
+import { PokemonListComponent  } from "../pokemon-list/pokemon-list.component";
 
 @Component({
     selector:"app-pokedex",
