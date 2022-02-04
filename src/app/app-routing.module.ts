@@ -17,7 +17,9 @@ const routes: Routes = [
 
     },
     { path: "login", component: LoginPage },
-    { path: "trainers", component: TrainersPage, canActivate:[AuthGuard] },
+    { path: "trainers", component: TrainersPage, 
+    // canActivate:[AuthGuard]
+ },
     { path: "pokedex", component: PokedexPage }
 ];
 
