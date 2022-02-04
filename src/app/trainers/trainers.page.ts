@@ -8,23 +8,15 @@ import { UsersService } from "../services/Users.service";
     styleUrls:["./trainers.page.css"]
 })
 
-
-
-
 export class TrainersPage{
     constructor(private readonly UserService: UsersService) {
-
     }
-
     
     ngOnInit(): void {
 
         console.log(UsersService.signedInUser)
         // this.UserService.fetchUsers();
     }
-    // get users():User[]{
 
-    //     return this.UserService.users();
-    // }
 };
 

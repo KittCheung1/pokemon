@@ -13,11 +13,12 @@ const routes: Routes = [
         path: "", 
         redirectTo: "/login",
         pathMatch: "full",
-        // component: LoginComponent
 
     },
     { path: "login", component: LoginPage },
     { path: "trainers", component: TrainersPage, 
+    //////////////Add this to get the authGuard functionality.
+    //  this is without localStorage Check  for now.
     // canActivate:[AuthGuard]
  },
     { path: "pokedex", component: PokedexPage }

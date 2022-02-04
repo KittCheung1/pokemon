@@ -47,7 +47,6 @@ export class LoginPage implements OnInit {
             })
     }
 
-
     createUser(name: string) {
         this.http.post(apiURL, {
             username: name,
