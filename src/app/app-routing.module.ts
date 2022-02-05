@@ -9,19 +9,10 @@ import { TrainersPage } from "./trainers/trainers.page"
 //PokeDex + Catch pokemon Page
 
 const routes: Routes = [
-    {
-        path: "", 
-        redirectTo: "/login",
-        pathMatch: "full",
-
-    },
+    { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "login", component: LoginPage },
-    { path: "trainers", component: TrainersPage, 
-    //////////////Add this to get the authGuard functionality.
-    //  this is without localStorage Check  for now.
-    // canActivate:[AuthGuard]
- },
-    { path: "pokedex", component: PokedexPage }
+    { path: "trainers", component: TrainersPage, canActivate: [AuthGuard] },
+    { path: "pokedex", component: PokedexPage, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

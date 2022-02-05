@@ -9,4 +9,6 @@ import { PokemonListComponent  } from "../pokemon-list/pokemon-list.component";
     styleUrls:["./pokedex.page.css"]
 })
 
-export class PokedexPage{}
+export class PokedexPage{
+    
+}
