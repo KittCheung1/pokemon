@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "login", component: LoginPage },
     { path: "trainers", component: TrainersPage, canActivate: [AuthGuard] },
-    { path: "pokedex", component: PokedexPage }
+    { path: "pokedex", component: PokedexPage, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
