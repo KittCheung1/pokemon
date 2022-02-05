@@ -4,6 +4,7 @@ import { User } from "../models/user.model";
 import { UsersService } from "../services/Users.service";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { AuthService } from '../guard/auth.service'
 import { Observable, UnsubscriptionError } from "rxjs";
 
 const apiURL = 'https://trivia-game-noroff-api.herokuapp.com/trainers'
@@ -31,12 +32,16 @@ export class LoginPage implements OnInit {
     }
     login() {
         let user = this.findUser(this.inputUsername)
-        if (!user )
-        user = this.createUser(this.inputUsername)
+        console.log(user)
+        if (!user ){
+            user = this.createUser(this.inputUsername) 
+        }
         
+        localStorage.setItem('isLoggedIn', "true"); 
+        // localStorage.setItem('user', user.username); 
         UsersService.signedInUser = user
+        console.log(UsersService.signedInUser)
         this.router.navigate(["trainers"])
-        console.log(this.inputUsername)
     }
 
     getUsers() {
@@ -48,6 +53,7 @@ export class LoginPage implements OnInit {
     }
 
     createUser(name: string) {
+        let user = this.findUser(this.inputUsername)
         this.http.post(apiURL, {
             username: name,
             pokemon: []
@@ -61,6 +67,10 @@ export class LoginPage implements OnInit {
                 if (!response) {
                     throw new Error('Could not create new Trainer')
                 }
+                console.log(user)
+                console.log(response)
+                localStorage.setItem('isLoggedIn', "true"); 
+                localStorage.setItem('user', name); 
                 return response
             })
     }
