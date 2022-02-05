@@ -85,6 +85,7 @@ export class UsersService {
     public setUserLoggedIn(user: User) {
         localStorage.setItem("user", user.username)
         UsersService.signedInUser = user
+        localStorage.setItem("status", "loggedIn")
         this.router.navigate(["trainers"])
     }
     // Removes user from Localstorage + navigate to login page

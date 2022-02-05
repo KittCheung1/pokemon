@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor() { }    
 
-  public isLoggedIn(): boolean {      
-    let status = false;      
-    if (localStorage.getItem('isLoggedIn') == "true") {      
-       status = true;      
+  constructor() { }
+
+  isLoggedIn(){
+
+    let token = false
+    if ( localStorage.getItem('status') !== null){
+      token = true
     }
-      else {      
-       status = false;      
-       }      
-    return status;      
-    }    
-
+    return token
+  }
 }
+
