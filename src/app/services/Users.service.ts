@@ -41,20 +41,15 @@ export class UsersService {
     public findUser(username: string) {
         return UsersService._users.find((x: User) => x.username === username)
     }
-    // A getter to expose variables to the template
-    // returns an array of users object
-    // get users(): User[] {
 
-    //     return this.UserService.users();
-    // }
 
 
     public getError(): string {
         return this._error;
     }
-
+    
+    //Creates a user if user cant be found in API
     public createAndSignInUser(name: string) {
-        // let user = this.findUser(this.inputUsername)
         this.http.post(apiURL, {
             username: name,
             pokemon: []
@@ -64,16 +59,14 @@ export class UsersService {
                 'Content-Type': 'application/json'
             }
         })
-            .subscribe(response => {
+            .subscribe((response) => {
                 if (!response) {
                     throw new Error('Could not create new Trainer')
                 }
-                // localStorage.setItem('isLoggedIn', "true"); 
-                // localStorage.setItem('user', name); 
                 this.setUserLoggedIn(response as User)
             })
     }
-
+    // Try to sign in  a user based on the localstorage user
     public trySignInExistingUser() {
         if (UsersService.signedInUser != null) {
             return 
@@ -88,12 +81,13 @@ export class UsersService {
         }
     }
 
+    // Sets user to localstorage as a loggedIn state and navigates the user to the next page
     public setUserLoggedIn(user: User) {
         localStorage.setItem("user", user.username)
         UsersService.signedInUser = user
         this.router.navigate(["trainers"])
     }
-
+    // Removes user from Localstorage + navigate to login page
     public setUserLogout(): void {
         localStorage.removeItem('user');
         UsersService.signedInUser = null

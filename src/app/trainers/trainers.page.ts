@@ -17,7 +17,7 @@ export class TrainersPage {
 
         console.log(UsersService.signedInUser)
         // console.log(localStorage.getItem("userKey"))
-        // this.UserService.fetchUsers();
+        this.UserService.fetchUsers();
     }
 
     logout() {
