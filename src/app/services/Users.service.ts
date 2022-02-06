@@ -84,7 +84,7 @@ export class UsersService {
         console.log(user)
         localStorage.setItem("id", user.id.toString())
         localStorage.setItem("status", "loggedIn")
-        this.router.navigate(["trainers"])
+        this.router.navigate(["pokedex"])
     }
     // Removes user from Localstorage + navigate to login page
     public setUserLogout(): void {
