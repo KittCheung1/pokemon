@@ -1,4 +1,4 @@
-# TestPokemon
+# Pokemon
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
 
@@ -6,22 +6,33 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the repo to the folder you want with git bash - run the command: git clone "remote-repo-url" 
+2. In git bash run: cd pokemon  (repository root folder)
+3. In git bash run: npm install
 
-## Build
+## Collaborators
+ Gabriel Andersson Kitt Cheung
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In your terminal of choice - when you want to start the application - run: ng serve 
 
-## Running end-to-end tests
+User will be saved in localstorage and will only be removed from localstorage when clicking on the Logout button.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Description
+Application starts at the Login page. Enter username to login. 
+User will be redirected to the Catalogue page on our case, the Pokedex Page with a list of Pokemon. Clicking on user can catch pokemon by clicking on the "catch (pokemon)" button. The user can then see the caught pokemon in the Trainers page.
+At the Trainers page, the user can release the caught pokemon.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Assumptions
+
+We make the assumption that removing a pokemon for the trainer/user in this case means a permanent 
+delete, we do not store deleted records. 
+
+We only fetch the first generation of pokemons in our pokedex/catalog-page. 
+This is partly because we have chosen not to use pagination. 
+It's also because we're favorably inclined towards the first gen pokemons.

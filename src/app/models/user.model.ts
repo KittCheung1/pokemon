@@ -3,7 +3,3 @@ export interface User{
     username:string,
     pokemon:[]
 }
-
-export interface UserPokemon{
-    
-}
