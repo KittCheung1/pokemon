@@ -23,8 +23,6 @@ h4, p {
     overflow: auto;
 }
 
-
-
 .pokemon-grid {
     justify-content: center;
     display: flex;

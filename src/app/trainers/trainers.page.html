@@ -1,128 +1,18 @@
 <div class="mainDivT">
     <div class="container">
         <img >
-        <h1>Welcome {{username}} to your Pokemon Collection</h1>
-        <div class="pokemon-grid">
+        <h1>Welcome {{this.user.username}} to your Pokemon Collection</h1>
+        <div class="pokemon-grid" *ngFor="let pokemon of this.user.pokemon let i = index">
             <div class="box" >
                 <div>
-                    <p>pokemon image</p>
+                    <img [src]="pokemon.sprites" alt="">
                 </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
+          
+                <h4>{{pokemon.name}}</h4>
                 <p>
-                    <b>Type:</b> 
+                    <b>Type:</b> {{pokemon.types[0].type.name}}
                 </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
-            </div>
-            <div class="box" >
-                <div>
-                    <p>pokemon image</p>
-                </div>
-                <!-- <img [src]="pokemon.sprites" alt=""> -->
-                <h4>pokemon name</h4>
-                <p>
-                    <b>Type:</b> 
-                </p>
-                <button>Release </button>
+                <button>Release</button>
             </div>
         </div>
         <div class="btnContainer">

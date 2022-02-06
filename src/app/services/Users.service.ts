@@ -26,6 +26,8 @@ export class UsersService {
                 this._error = error.message;
             });
     }
+
+ 
     // Getter for only getting the Users object and not changing the users in the services
     public getUsers(): User[] {
         return UsersService._users;
@@ -86,6 +88,7 @@ export class UsersService {
         localStorage.setItem("user", user.username)
         UsersService.signedInUser = user
         console.log(user)
+        localStorage.setItem("id", user.id.toString())
         localStorage.setItem("status", "loggedIn")
         this.router.navigate(["trainers"])
     }
