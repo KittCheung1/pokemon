@@ -19,7 +19,7 @@ export class PokemonListComponent implements OnInit {
   user: any;
   pictureUrl = "../../assets/testpoke2.gif";
   pokemons: any[] = []
-  pokemonFromSession = this.pokemonService.getPokemonsFromSessionStorage(0, 150);
+  pokemonFromSession = this.pokemonService.getPokemonsFromSessionStorage(0, 151);
   key = "334H7SGhAEiIPqPfCg+pfA=="
   constructor(
     private pokemonService: PokemonService,

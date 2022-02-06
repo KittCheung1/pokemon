@@ -33,13 +33,7 @@ export class UsersService {
         return UsersService._users;
     }
 
-    // getUsers() {
-    //     this.http.get<User[]>(apiURL)
-    //         .subscribe(users => {
-    //             this.fetchedUsers = users
-    //             console.log(this.fetchedUsers)
-    //         })
-    // }
+ 
     public findUser(username: string) {
         return UsersService._users.find((x: User) => x.username === username)
     }

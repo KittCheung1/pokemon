@@ -12,7 +12,7 @@
                 <p>
                     <b>Type:</b> {{pokemon.types[0].type.name}}
                 </p>
-                <button>Release</button>
+                <button (click)="releasePokemon(this.user, pokemon)">Release</button>
             </div>
         </div>
         <div class="btnContainer">
