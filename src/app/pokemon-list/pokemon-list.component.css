@@ -16,3 +16,9 @@
    display: block;
    margin: 0 auto;
 }
+#trainerBtn{
+width: 100px;
+height: 70px;
+position: sticky;
+top:0;
+}

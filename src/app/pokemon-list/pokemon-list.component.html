@@ -1,3 +1,4 @@
+<button id="trainerBtn" (click)="goToTrainer()">Go to trainers page!</button>
 <div class="pokemon-grid">
     <div class="box" *ngFor="let pokemon of pokemonFromSession let i = index">
         <img [src]="pokemon.sprites" alt="">
@@ -7,6 +8,7 @@
         </p>
       
         <button (click)="catchAPokemon(this.user, pokemon)">Catch {{pokemon["name"]}}</button>
+        
     </div>
    
 </div>
