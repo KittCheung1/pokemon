@@ -24,6 +24,8 @@ export class TrainersPage {
     ) {
     }
 
+    //Updates the current users pokemon list. We use the pokemon argument that gets passed to function to filter the current list. The filtered list then gets sent with 
+    // the patch request. 
     public releasePokemon = async (user: User, pokemonInput: Pokemon) => {
 
         const response = await fetch(`https://trivia-game-noroff-api.herokuapp.com/trainers/${user.id}`, {
@@ -39,24 +41,22 @@ export class TrainersPage {
             })
         })
         if (!response.ok) {
-            throw new Error("could not update trainer")
+            throw new Error("could not update trainer-pokemon-list!")
         }
         const result = await response.json();
-       this.user = result;
+        this.user = result;
     }
 
+    //Get the current user and sets a local field with the users pokemons in order to get them displayed on the view.
     ngOnInit(): void {
         let localUserId = localStorage.getItem("id");
         this.user = this.http.get<User>(`https://trivia-game-noroff-api.herokuapp.com/trainers/${localUserId}`)
             .subscribe((user: User) => {
                 this.user = user;
-                console.log(user);
                 return user;
             });
 
         this.pokemons = this.user.pokemon;
-
-        console.log(this.user)
     }
 
     logout() {

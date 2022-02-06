@@ -1,7 +1,6 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { User } from "../models/user.model";
-import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 
 const apiURL = 'https://trivia-game-noroff-api.herokuapp.com/trainers'
@@ -27,23 +26,20 @@ export class UsersService {
             });
     }
 
- 
     // Getter for only getting the Users object and not changing the users in the services
     public getUsers(): User[] {
         return UsersService._users;
     }
 
- 
+    // Find inputed username in UserObjectLists usernames
     public findUser(username: string) {
         return UsersService._users.find((x: User) => x.username === username)
     }
 
-
-
     public getError(): string {
         return this._error;
     }
-    
+
     //Creates a user if user cant be found in API
     public createAndSignInUser(name: string) {
         this.http.post(apiURL, {
@@ -62,10 +58,11 @@ export class UsersService {
                 this.setUserLoggedIn(response as User)
             })
     }
-    // Try to sign in  a user based on the localstorage user
+
+    // Try to sign in a user based on the localstorage user
     public trySignInExistingUser() {
         if (UsersService.signedInUser != null) {
-            return 
+            return
         }
         const username = localStorage.getItem("user")
         if (username == null) {
@@ -77,7 +74,7 @@ export class UsersService {
         }
     }
 
-    // Sets user to localstorage as a loggedIn state and navigates the user to the next page
+    // Sets user to localstorage with a loggedIn state and navigates the user to the next page
     public setUserLoggedIn(user: User) {
         localStorage.setItem("user", user.username)
         UsersService.signedInUser = user
@@ -86,7 +83,7 @@ export class UsersService {
         localStorage.setItem("status", "loggedIn")
         this.router.navigate(["pokedex"])
     }
-    // Removes user from Localstorage + navigate to login page
+    // Removes user from Localstorage + navigate back to login page
     public setUserLogout(): void {
         localStorage.removeItem('user');
         localStorage.removeItem('status');

@@ -82,7 +82,7 @@ h1 {
     background-color: rgb(233, 128, 0);
 }
 
-#trainerBtn, #logoutBtn{
+#trainerBtn, #logoutBtn {
     background-color: aquamarine;
     border-radius: 35px;
     padding: 1px;
@@ -95,13 +95,13 @@ h1 {
     position: sticky;
     top: 0px;
     float: right;
-    margin:20px;
+    margin: 20px;
 }
 
-.btnContainer{
+.btnContainer {
     width: 200px;
     float: right;
     position: sticky;
-    top:0;
+    top: 0;
     flex-direction: column;
 }

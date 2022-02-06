@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { User } from "../models/user.model";
 import { UsersService } from "../services/Users.service";
-import { HttpClient, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 
 @Component({
@@ -12,11 +12,7 @@ import { Router } from "@angular/router";
 }) //Decorator
 export class LoginPage implements OnInit {
 
-    trainer: any;
-    APIusername: any;
     inputUsername: string = "";
-    fetchedUsers: any;
-    createdUser: User | null = null;
 
     constructor(private router: Router, private http: HttpClient, private readonly UserService: UsersService, private fb: FormBuilder) {
     }

@@ -10,39 +10,27 @@ export class PokemonService {
     private http: HttpClient
   ) { }
 
-
+ // Get pokemons from the sessionStorage
   getPokemonsFromSessionStorage(numOne: number, numTwo: number) {
     let result: Pokemon[] = [];
     for (let index = numOne; index <= numTwo; index++) {
 
-        let temp = sessionStorage.getItem(index.toString());
-       
-        if (temp === null) {
-            continue;
-        }
-        else if(temp){
-         
-            result.push(JSON.parse(temp));
-        }
-    }
-  
-    return result;
-}
-getPokemonByID(id: number) {
-  let result: Pokemon;
-  let temp = sessionStorage.getItem(id.toString());
+      let temp = sessionStorage.getItem(index.toString());
 
-  if(temp === null){
-    return; 
+      if (temp === null) {
+        continue;
+      }
+      else if (temp) {
+        result.push(JSON.parse(temp));
+      }
+    }
+    return result;
   }
-  else if(temp){
-    result = JSON.parse(temp);
-  }
-}
+
+  // Get first generation of pokemons from API
   getPokemonsFromApi() {
     return this.http.get("https://pokeapi.co/api/v2/pokemon?limit=152");
   }
-
   getMorePokemonsFromApi(name: string) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }

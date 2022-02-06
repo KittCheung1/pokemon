@@ -5,9 +5,6 @@ import { LoginPage } from "./login/login.page"
 import { PokemonListPage } from "./pokemon-list/pokemon-list.page";
 import { TrainersPage } from "./trainers/trainers.page"
 
-//TrainerProfile Page
-//PokeDex + Catch pokemon Page
-
 const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "login", component: LoginPage },

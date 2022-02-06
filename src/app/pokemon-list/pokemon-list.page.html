@@ -8,15 +8,12 @@
         <div class="pokemon-grid">
             <div class="box" *ngFor="let pokemon of pokemonFromSession let i = index">
                 <img [src]="pokemon.sprites" alt="">
-                
                 <h4>{{pokemon["name"].toUpperCase()}}</h4>
                 <p>
                     <b>Type:</b> {{ pokemon.types[0].type.name }}
                 </p>
-                
                 <button class="btn" (click)="catchAPokemon(this.user, pokemon)">Catch {{pokemon["name"]}}</button>
             </div>
-            
         </div>
     </div>
 </div>

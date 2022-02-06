@@ -15,9 +15,7 @@ import { Router } from '@angular/router';
 
 export class PokemonListPage implements OnInit {
 
-
   user: any;
-  pictureUrl = "../../assets/testpoke2.gif";
   pokemons: any[] = []
   pokemonFromSession = this.pokemonService.getPokemonsFromSessionStorage(0, 151);
   key = "334H7SGhAEiIPqPfCg+pfA=="
@@ -25,15 +23,15 @@ export class PokemonListPage implements OnInit {
     private pokemonService: PokemonService,
     private UserService: UsersService,
     private http: HttpClient,
-    private router:Router
+    private router: Router
 
-  ) {
+  ){}
 
+  public goToTrainer() {
+    this.router.navigate(['/trainers']);
   }
-  public goToTrainer(){
-       this.router.navigate(['/trainers']); 
-  }
 
+  //Here we update the current users pokemon list and send a patch request. 
   public catchAPokemon = async (user: User, pokemon: Pokemon) => {
 
     const response = await fetch(`https://trivia-game-noroff-api.herokuapp.com/trainers/${user.id}`, {
@@ -52,22 +50,20 @@ export class PokemonListPage implements OnInit {
     const result = await response.json();
 
     alert(`Congratulations, you have captured ${pokemon.name}!`)
-    console.log(result);
-    this.user = result; // here i add the updatedUser to the user field on component
+    this.user = result;
   }
 
-
-
+  //On initialization we fetch the current user from the api via the localstorage id. 
+  // Then we check if the session storage is filled with the first generation of pokemons. If that is not the case we fetch the pokemons directly from the api and
+  // add them to the session storage so that they load from there the next time.
   ngOnInit(): void {
     let localUserId = localStorage.getItem("id");
     this.user = this.http.get<User>(`https://trivia-game-noroff-api.herokuapp.com/trainers/${localUserId}`)
       .subscribe((user: User) => {
         this.user = user;
-        console.log(user);
+
         return user;
       });
-
-    console.log(this.user);
 
     if (sessionStorage.length < 151) {
 
@@ -84,9 +80,8 @@ export class PokemonListPage implements OnInit {
           location.reload();
         })
     }
-    console.log(this.user);
   }
   logout() {
     this.UserService.setUserLogout();
-}
+  }
 }
