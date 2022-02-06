@@ -2,8 +2,8 @@
     <div class="container">
         <img >
         <h1>Welcome {{this.user.username}} to your Pokemon Collection</h1>
-        <div class="pokemon-grid" *ngFor="let pokemon of this.user.pokemon let i = index">
-            <div class="box" >
+        <div class="pokemon-grid" >
+            <div class="box" *ngFor="let pokemon of this.user.pokemon let i = index" >
                 <div>
                     <img [src]="pokemon.sprites" alt="">
                 </div>
