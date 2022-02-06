@@ -1,18 +1,18 @@
 <div class="mainDivT">
     <div class="container">
         <img >
-        <h1>Welcome {{this.user.username}} to your Pokemon Collection</h1>
-        <div class="pokemon-grid" *ngFor="let pokemon of this.user.pokemon let i = index">
-            <div class="box" >
+        <h1>Welcome {{this.user.username}} to Pokemon Collection</h1>
+        <div class="pokemon-grid" >
+            <div class="box" *ngFor="let pokemon of this.user.pokemon let i = index" >
                 <div>
                     <img [src]="pokemon.sprites" alt="">
                 </div>
           
-                <h4>{{pokemon.name}}</h4>
+                <h4>{{pokemon.name.toUpperCase()}}</h4>
                 <p>
                     <b>Type:</b> {{pokemon.types[0].type.name}}
                 </p>
-                <button (click)="releasePokemon(this.user, pokemon)">Release</button>
+                <button class="releaseBtn" (click)="releasePokemon(this.user, pokemon)">Release</button>
             </div>
         </div>
         <div class="btnContainer">
