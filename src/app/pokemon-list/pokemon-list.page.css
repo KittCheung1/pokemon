@@ -75,12 +75,11 @@ h1 {
     border-width: 3px;
     border-color: darkcyan;
     font-family: monospace;
-    cursor: default;
+    cursor: pointer;
 }
 
-.btn :hover {
-    cursor: pointer;
-    color: bisque;
+.btn:hover {
+    background-color: rgb(233, 128, 0);
 }
 
 #trainerBtn {
