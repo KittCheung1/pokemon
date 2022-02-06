@@ -10,14 +10,13 @@ import { UsersService } from "../services/Users.service";
 })
 
 export class TrainersPage {
+username: any;
     constructor(private readonly UserService: UsersService, private router: Router) {
     }
 
     ngOnInit(): void {
+        this.username = localStorage.getItem("user")
 
-        console.log(UsersService.signedInUser)
-        // console.log(localStorage.getItem("userKey"))
-        this.UserService.fetchUsers();
     }
 
     logout() {
