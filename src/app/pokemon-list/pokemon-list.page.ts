@@ -23,7 +23,7 @@ export class PokemonListPage implements OnInit {
   key = "334H7SGhAEiIPqPfCg+pfA=="
   constructor(
     private pokemonService: PokemonService,
-    private userService: UsersService,
+    private UserService: UsersService,
     private http: HttpClient,
     private router:Router
 
@@ -86,4 +86,7 @@ export class PokemonListPage implements OnInit {
     }
     console.log(this.user);
   }
+  logout() {
+    this.UserService.setUserLogout();
+}
 }
