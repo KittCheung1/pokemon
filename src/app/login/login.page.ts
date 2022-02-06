@@ -1,9 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { User } from "../models/user.model";
 import { UsersService } from "../services/Users.service";
-import { HttpClient } from "@angular/common/http";
-import { Router } from "@angular/router";
 
 @Component({
     selector: "app-login",
@@ -14,7 +11,7 @@ export class LoginPage implements OnInit {
 
     inputUsername: string = "";
 
-    constructor(private router: Router, private http: HttpClient, private readonly UserService: UsersService, private fb: FormBuilder) {
+    constructor(private readonly UserService: UsersService, private fb: FormBuilder) {
     }
     ngOnInit() {
         this.UserService.fetchUsers();

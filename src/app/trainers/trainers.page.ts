@@ -1,7 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { filter } from "rxjs";
 import { Pokemon } from "../models/pokemon.model";
 import { User } from "../models/user.model";
 import { UsersService } from "../services/Users.service";
@@ -19,7 +17,6 @@ export class TrainersPage {
     key = "334H7SGhAEiIPqPfCg+pfA=="
     constructor(
         private readonly UserService: UsersService,
-        private router: Router,
         private http: HttpClient
     ) {
     }

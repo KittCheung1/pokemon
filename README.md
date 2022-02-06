@@ -1,4 +1,4 @@
-# TestPokemon
+# Pokemon
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
 
@@ -6,22 +6,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installation
+1. Clone the repo to the folder you want with git bash -
+repoUrl" "enolc tig :nur
+2. 
+npm install
+## Collaborators
+ Gabriel Andersson Kitt Cheung
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Usage
+Run npm install on the terminal / command prompt before starting the app. To start the application, then run npm start.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Make sure that no user is saved in the localstorage or that might take you to the wrong startup page when launching the app. If you find yourself logged in automatically when starting the app, please log out first in order to clear the local storage. That will help it running correctly.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Description
+Application starts at the Login page. Enter username to login. 
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 
