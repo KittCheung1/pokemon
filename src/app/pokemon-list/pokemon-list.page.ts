@@ -4,7 +4,7 @@ import { User } from '../models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { PokemonService } from '../services/pokemon.service';
 import { UsersService } from '../services/Users.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -24,10 +24,14 @@ export class PokemonListPage implements OnInit {
   constructor(
     private pokemonService: PokemonService,
     private userService: UsersService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router:Router
 
   ) {
 
+  }
+  public goToTrainer(){
+       this.router.navigate(['/trainers']); 
   }
 
   public catchAPokemon = async (user: User, pokemon: Pokemon) => {
