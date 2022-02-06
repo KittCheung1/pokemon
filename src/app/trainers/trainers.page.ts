@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { filter } from "rxjs";
 import { Pokemon } from "../models/pokemon.model";
 import { User } from "../models/user.model";
 import { UsersService } from "../services/Users.service";
@@ -23,28 +24,25 @@ export class TrainersPage {
     ) {
     }
 
-   public releasePokemon = async(user: User, pokemonInput: Pokemon) => {
-        
-        user.pokemon.forEach((pokemon,index) => {
-            if(pokemon === pokemonInput) user.pokemon.splice(index,1);
-        })
-    
-        console.log(user.pokemon);
-      
+    public releasePokemon = async (user: User, pokemonInput: Pokemon) => {
+
         const response = await fetch(`https://trivia-game-noroff-api.herokuapp.com/trainers/${user.id}`, {
             method: 'PATCH',
             headers: {
-              'X-API-Key': this.key,
-              'Content-Type': 'application/json'
+                'X-API-Key': this.key,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              pokemon: user.pokemon
+                pokemon: user.pokemon.filter(pokemon => {
+                    return pokemon !== pokemonInput;
+                })
             })
-          })
-          if (!response.ok) {
+        })
+        if (!response.ok) {
             throw new Error("could not update trainer")
-          }
-          const result = await response.json();
+        }
+        const result = await response.json();
+       this.user = result;
     }
 
     ngOnInit(): void {
@@ -56,7 +54,7 @@ export class TrainersPage {
                 return user;
             });
 
-            this.pokemons = this.user.pokemon;
+        this.pokemons = this.user.pokemon;
 
         console.log(this.user)
     }
