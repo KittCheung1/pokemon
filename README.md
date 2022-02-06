@@ -7,21 +7,32 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Installation
-1. Clone the repo to the folder you want with git bash -
-repoUrl" "enolc tig :nur
-2. 
-npm install
+
+1. Clone the repo to the folder you want with git bash - run the command: git clone "remote-repo-url" 
+2. In git bash run: cd pokemon  (repository root folder)
+3. In git bash run: npm install
+
 ## Collaborators
  Gabriel Andersson Kitt Cheung
 
 
 ## Usage
-Run npm install on the terminal / command prompt before starting the app. To start the application, then run npm start.
 
-Make sure that no user is saved in the localstorage or that might take you to the wrong startup page when launching the app. If you find yourself logged in automatically when starting the app, please log out first in order to clear the local storage. That will help it running correctly.
+In your terminal of choice - when you want to start the application - run: ng serve 
+
+User will be saved in localstorage and will only be removed from localstorage when clicking on the Logout button.
 
 
 ## Description
 Application starts at the Login page. Enter username to login. 
+User will be redirected to the Catalogue page on our case, the Pokedex Page with a list of Pokemon. Clicking on user can catch pokemon by clicking on the "catch (pokemon)" button. The user can then see the caught pokemon in the Trainers page.
+At the Trainers page, the user can release the caught pokemon.
 
-## 
+## Assumptions
+
+We make the assumption that removing a pokemon for the trainer/user in this case means a permanent 
+delete, we do not store deleted records. 
+
+We only fetch the first generation of pokemons in our pokedex/catalog-page. 
+This is partly because we have chosen not to use pagination. 
+It's also because we're favorably inclined towards the first gen pokemons.
