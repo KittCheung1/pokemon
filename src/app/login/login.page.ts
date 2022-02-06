@@ -5,9 +5,6 @@ import { UsersService } from "../services/Users.service";
 import { HttpClient, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { Router } from "@angular/router";
 
-// const apiURL = 'https://trivia-game-noroff-api.herokuapp.com/trainers'
-// const apiKey = "334H7SGhAEiIPqPfCg+pfA=="
-
 @Component({
     selector: "app-login",
     templateUrl: "./login.page.html",

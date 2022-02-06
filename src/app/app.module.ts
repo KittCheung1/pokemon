@@ -6,16 +6,14 @@ import { LoginPage } from './login/login.page';
 import { TrainersPage } from './trainers/trainers.page';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { PokedexPage } from './pokedex/pokedex.page';
+import { PokemonListPage } from './pokemon-list/pokemon-list.page';
 
 @NgModule({ //Decorator
   declarations: [
     AppComponent,
     LoginPage,
     TrainersPage,
-    PokemonListComponent,
-    PokedexPage
+    PokemonListPage
   ],
   imports: [
     BrowserModule,

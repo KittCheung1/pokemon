@@ -45,9 +45,9 @@ img {
     text-align: left;
     padding-left: 10px;
     position: relative;
-    background:rgb(116, 228, 191);
+    background: rgb(116, 228, 191);
     outline: none;
-    color:black;
+    color: black;
 }
 
 form {
@@ -55,11 +55,9 @@ form {
 
 }
 
-
 body {
     position: relative;
 }
-
 
 .mainDiv {
     z-index: -1;
