@@ -1,0 +1,83 @@
+.pokemon-grid {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 16px; 
+    padding: 20px;
+}
+
+h1 {
+    font-size:50pt;
+    color: rgb(233, 6, 6);
+    text-shadow: 4px 2px 10px #FF0000;
+}
+
+.mainDiv {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("https://wallpaperaccess.com/full/5818333.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex; 
+    box-shadow: inset 0px 0px 0px 500px rgba(0, 0, 0, .7);
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    padding: 50px;
+    border-width: 2px;
+    background: transparent;
+    width: 100vw;
+    height: 90vh;
+    margin-bottom: 200px;
+    overflow: auto;
+}
+.box h4{
+    font-family: cursive;
+}
+
+.box p{
+    color: rgb(200, 181, 3);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.box {
+    width: 220px;
+    height: 250px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    background: rgba(7, 7, 7, 0.726);
+    border-style: solid;
+    border-right: 3px;
+    border-left: 3px;
+    border-width: 5px;
+    border-color: rgba(4, 233, 80, 0.671);
+    border-radius: 30px;
+    color: rgb(221, 219, 219);
+    padding-top: 20px;
+}
+
+.btn {
+    background-color: rgba(18, 211, 224, 0.753);
+    border-radius: 5px;
+    width: 150px;
+    font-size: 13px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: darkcyan;
+    font-family: monospace;
+    cursor: default;
+}
+
+.btn :hover{
+    cursor:pointer;
+    color: bisque;
+}

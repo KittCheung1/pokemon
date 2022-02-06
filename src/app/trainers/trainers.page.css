@@ -70,7 +70,6 @@ h4, p {
     background-size: cover;
     background-position: center center;
     display: flex;
-    background-size: 100% 100%;
     box-shadow: inset 20px 0px 500px 50px rgba(0, 0, 0, .7);
     overflow: hidden;
 }

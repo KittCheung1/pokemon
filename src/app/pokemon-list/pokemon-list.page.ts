@@ -8,18 +8,18 @@ import { UsersService } from '../services/Users.service';
 
 @Component({
   selector: 'app-pokemon-list',
-  templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.css']
+  templateUrl: './pokemon-list.page.html',
+  styleUrls: ['./pokemon-list.page.css']
 })
 
 
-export class PokemonListComponent implements OnInit {
+export class PokemonListPage implements OnInit {
 
 
   user: any;
   pictureUrl = "../../assets/testpoke2.gif";
   pokemons: any[] = []
-  pokemonFromSession = this.pokemonService.getPokemonsFromSessionStorage(0, 150);
+  pokemonFromSession = this.pokemonService.getPokemonsFromSessionStorage(0, 151);
   key = "334H7SGhAEiIPqPfCg+pfA=="
   constructor(
     private pokemonService: PokemonService,
@@ -65,7 +65,7 @@ export class PokemonListComponent implements OnInit {
 
     console.log(this.user);
 
-    if (sessionStorage.length < 1) {
+    if (sessionStorage.length < 151) {
 
       this.pokemonService.getPokemonsFromApi()
         .subscribe((response: any) => {
