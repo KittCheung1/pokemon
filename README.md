@@ -25,8 +25,10 @@ User will be saved in localstorage and will only be removed from localstorage wh
 
 ## Description
 Application starts at the Login page. Enter username to login. 
-User will be redirected to the Catalogue page on our case, the Pokedex Page with a list of Pokemon. Clicking on user can catch pokemon by clicking on the "catch (pokemon)" button. The user can then see the caught pokemon in the Trainers page.
-At the Trainers page, the user can release the caught pokemon.
+User will be redirected to the Catalogue page on our case, the Pokedex Page with a list of Pokemon. (Might take some time to store the pokemons)
+User can catch pokemon by clicking on the "catch (pokemon)" button. Alert will notify user that the pokemon has been caught.
+The user can then see all the caught pokemons in the Trainers page.
+At the Trainers page, the user can release each individual pokemon.
 
 ## Assumptions
 
