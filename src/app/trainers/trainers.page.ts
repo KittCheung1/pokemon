@@ -71,8 +71,6 @@ export class TrainersPage {
         let localUserId = localStorage.getItem("id");
         this.user = this.http.get<User>(`https://trivia-game-noroff-api.herokuapp.com/trainers/${localUserId}`)
             .subscribe((user: User) => {
-                console.log(user);
-
                 if (user.id === 1) {
                     if (user.pokemon.includes("bulbasaur" as never) && user.pokemon.includes("pikachu" as never)) {
                         let bulbasaur: any = sessionStorage.getItem("1");
@@ -94,8 +92,6 @@ export class TrainersPage {
 
 
         this.pokemons = this.user.pokemon;
-        console.log(this.user);
-        console.log(this.pokemons);
     }
 
     logout() {
