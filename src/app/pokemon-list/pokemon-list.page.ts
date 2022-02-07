@@ -65,7 +65,7 @@ export class PokemonListPage implements OnInit {
         return user;
       });
 
-    if (sessionStorage.length < 151) {
+      if(sessionStorage.length < 151) {
 
       this.pokemonService.getPokemonsFromApi()
         .subscribe((response: any) => {
@@ -75,9 +75,9 @@ export class PokemonListPage implements OnInit {
                 this.pokemons.push(pokemon);
                 sessionStorage.setItem(pokemon.id,
                   JSON.stringify({ id: pokemon.id, name: pokemon.name, sprites: pokemon.sprites.front_default, types: pokemon.types }));
-              })
+                  if(sessionStorage.length > 151) location.reload();
+                })
           });
-          location.reload();
         })
     }
   }
