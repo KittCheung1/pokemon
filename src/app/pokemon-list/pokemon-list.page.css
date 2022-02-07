@@ -96,6 +96,7 @@ h1 {
     top: 0px;
     float: right;
     margin: 20px;
+    cursor: pointer;
 }
 
 .btnContainer {

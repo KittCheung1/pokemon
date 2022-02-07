@@ -78,7 +78,6 @@ export class UsersService {
     public setUserLoggedIn(user: User) {
         localStorage.setItem("user", user.username)
         UsersService.signedInUser = user
-        console.log(user)
         localStorage.setItem("id", user.id.toString())
         localStorage.setItem("status", "loggedIn")
         this.router.navigate(["pokedex"])
@@ -87,6 +86,7 @@ export class UsersService {
     public setUserLogout(): void {
         localStorage.removeItem('user');
         localStorage.removeItem('status');
+        localStorage.removeItem('id');
         UsersService.signedInUser = null
         this.router.navigate(["login"])
     }

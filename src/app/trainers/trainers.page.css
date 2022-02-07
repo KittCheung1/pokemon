@@ -42,6 +42,7 @@ h4, p {
     border-width: 3px;
     border-color: darkcyan;
     margin: 10px;
+    cursor: pointer;
 }
 
 .releaseBtn:hover {
